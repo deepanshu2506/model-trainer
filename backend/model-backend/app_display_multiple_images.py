@@ -64,7 +64,7 @@ CORS(app)
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-@app.route("/")
+@app.route("/",methods=["POST"])
 def index():
     return 'hello world'
 
