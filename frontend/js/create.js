@@ -54,8 +54,9 @@ $('.submit-button').on('click',function(){
             console.log(data[0])
             const stride = $(data[0]).children('input').val()
             const filter = $(data[1]).children('input').val();
-            const sameconvolution = $(data[2]).children('input').is(":checked");
-            layerconfig = {layerType,stride,filter,sameconvolution}
+            const numFilters = $(data[2]).children('input').val();
+            const sameconvolution = $(data[3]).children('input').is(":checked");
+            layerconfig = {layerType,stride,filter,sameconvolution,numFilters}
         }
         else if(layerType == 'dense_layer'){
             const data =  $(card).children('.card-body').children('.dense_layer').children('.group-input');
@@ -80,6 +81,18 @@ $('.submit-button').on('click',function(){
 
         layers.push(layerconfig);
     }
-    config={name,learningrate,layers}
-    console.log(config)
+    config={learningrate,layers}
+    $.ajax({
+        url: 'http://127.0.0.1:3000/save',
+        type: 'post',
+        data: {
+            name: name,
+            config:config
+        },
+        success: function(response){
+            if(response.code == 1)
+                window.location.href  = "save.html"
+        }
+    });
+            console.log(config)
 });
