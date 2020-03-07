@@ -15,8 +15,27 @@ $('#predict-button').click(function(){
         contentType: false,
         processData: false,
         success: function(response){
-                console.log(response);
-        
+            const cards = $('.row').children();
+            index = 0
+            for(card of cards){
+
+                confidence = response[index];
+                
+                var label = "buildings"
+                maxconfidence = confidence[label];
+                console.log(confidence)
+                for(c in confidence){
+                    if(parseFloat(confidence[label]) < parseFloat(confidence[c])){
+                        label = c;
+                        maxconfidence = parseFloat(confidence[c]);
+                    }
+                }
+                console.log()
+                // console.log($(card).children('.card').children('.card-body').children('.class').text);
+                $(card).children('.card').children('.card-body').children('.confidence').text(maxconfidence)
+                $(card).children('.card').children('.card-body').children('.class').text(label)
+                index++;
+            }
         }   
     });   
     
@@ -37,8 +56,8 @@ $("#file-picker").change(function () {
                         <div class="card">
                             <img src="" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Class</h5>
-                                <p class="card-text">Confidence Score</p>
+                                <h5 class="card-title">Class</h5><p class = "card-text class">df</p>
+                                <p class="card-text">Confidence Score</p><p class = "card-text confidence">sd</p>
                             </div>
                             <div class="card-body">
                                 <a href="#" class="card-link">Incorrect ?</a>
