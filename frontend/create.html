@@ -38,8 +38,10 @@
         <section>
             <div class='container'>
                 <!-- <form action="" name=""> -->
-                    <label for="name"></label>
-                    <input type="text" id="name" value="name">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    <label id="learning-label" for="learning-rate">Learning Rate</label>
+                    <input type="text" id="learning-rate" name="learning-rate">
                     <div class="card repeat-div">
                         <div class="card-body">
                                 <div class="group-input">
@@ -98,13 +100,13 @@
                                         <div class="group-input">
                                             <label for="filter_size_pool">Filter Size
                                             </label>
-                                            <input type="text" id="filter_size">
+                                            <input type="number" id="filter_size">
                                         </div>	
                                         <div class="group-input">
                                             <label for="stride_pool">
                                                 stride
                                             </label>
-                                            <input type="text" id="stride_pool">
+                                            <input type="number" id="stride_pool">
                                         </div>
                                     </div>
 
