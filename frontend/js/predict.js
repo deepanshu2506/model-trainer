@@ -10,7 +10,7 @@ $('#predict-button').click(function(e){
     console.log(files)
     
     $.ajax({
-        url: 'http://127.0.0.1:4555/upload',
+        url: 'http://127.0.0.1:8080/upload',
         type: 'post',
         data: fd,
         contentType: false,
@@ -34,8 +34,9 @@ $('#predict-button').click(function(e){
                 var datapoints = []
                 for(var i=0; i<name.length; i++){
                     datapoints.push({
-                        x: i,
-                        y: parseFloat(value[i])
+                        // x: i,
+                        y: parseFloat(value[i]),
+                        label: name[i]
                     });
                 }
                 // console.log(datapoints);
@@ -55,6 +56,7 @@ $('#predict-button').click(function(e){
                         titleFontSize: 24
                     },
                     axisX:{
+                        labelFontSize: 10,
                         interval: 1,
                     },
                     data: [{
@@ -80,6 +82,21 @@ $('#predict-button').click(function(e){
     
 });
 
+$('body').on('click' ,'.incorrect',function(){
+    $(this).attr('disabled',true)
+    const predictedClass = $(this).parent().siblings('.card-body').children('.class').text();
+    $(this).parent().siblings('.card-body').children('.class').remove();
+    $(`<input type='text' value='${predictedClass}' /><button class = ' btn btn-success'id = 'correct'>correct</button>`).insertAfter($(this).parent().siblings('.card-body').children('h5'))
+});
+
+
+$('body').on('click' ,'#correct',function(){
+    const correctedVal = $(this).siblings('input').val();
+    $(this).siblings('input').remove();
+    $(`<p class = "card-text class">${correctedVal}</p>`).insertAfter($(this).siblings('h5'));
+    $(this).remove();
+    alert('your change has been recorded the model will be trained shortly');
+});
 
 $("#file-picker").change(function () {
     $('.row').children().remove();
@@ -102,7 +119,7 @@ $("#file-picker").change(function () {
                             </div>
                             
                             <div class="card-body">
-                                <a href="#" class="card-link">Incorrect ?</a>
+                                <button class="incorrect btn btn-warning">Incorrect ?</a>
                             </div>
                             
                         </div>
