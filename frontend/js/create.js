@@ -2,9 +2,9 @@ $(document).ready(function(){
     $("body").on("change",'.myList',function(){
         $(this).find("option:selected").each(function(){
             var optionValue = $(this).attr("value");
-        console.log($(this).parent().parent().siblings());
+        //console.log($(this).parent().parent().siblings());
         //.parent().parent().parent().parent().siblings().show()
-            console.log(optionValue);
+            //console.log(optionValue);
             if(optionValue){
                 $(this).parent().parent().siblings().not("." + optionValue).hide();
                 $(this).parent().parent().siblings('.'+optionValue).show();
@@ -25,7 +25,7 @@ $(function () {
     });
 });
 */
-console.log($($('.repeat-div').children().children().children()[1]).attr('class'));
+//console.log($($('.repeat-div').children().children().children()[1]).attr('class'));
 
 
 $(function () {
@@ -35,4 +35,14 @@ $(function () {
         $self.before($self.prev($('.repeat-div')).clone());
         //$self.remove();
     });
+});
+
+$('.submit-button').on('click',function(){
+    var a = $('.repeat-div').children().children();
+    var b = Object.entries(a);
+    b.forEach(function(ele){
+        ele.forEach(function(e){
+            console.log(e);
+        })
+    })
 });
