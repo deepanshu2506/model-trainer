@@ -1,0 +1,227 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="C:\Users\Laptop\model-trainer\frontend\css\create.css">
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+            <nav class="main-menu">
+                <ul>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                            <span class="nav-text">
+                                Create Model
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-eye fa-2x" aria-hidden="true"></i>
+                            <span class="nav-text">
+                                View all Model
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-search fa-2x" aria-hidden="true"></i>
+                            <span class="nav-text">
+                                Predict
+                            </span>
+                        </a>
+                    </li>
+            </nav>
+            <div class="area2">
+        <section>
+            <div class='container'>
+                <div class="col-md-3 col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="group-input">
+                                <label for="layer_type">Layer Type
+                                <select id = "myList">
+                                    <option value = "convolution_layer">Convolution Layer</option>
+                                    <option value = "pooling_layer">Pooling Layer</option>
+                                    <option value = "dense_layer">Dense Layer</option>
+                                    <option value = "output_layer">Output Layer</option>
+                                </select>
+                                </label>
+                            </div>
+                            <div class="group-input">
+                                <label for="stride">Stride
+                                    <input type="text" id="stride">
+                                </label>
+                            </div>	
+                            <div class="group-input">	
+                                <label for="filter_size">Filter Size
+                                    <input type="text" id="filter_size">
+                                </label>
+                            </div>
+                            <div class="group-input gi-check">	
+                                <label for="same_conv">
+                                    Same Convolution Layer
+                                    <input type="checkbox" id="same_conv">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+         
+            <section>
+                <div class='container'>
+                     
+                    
+                    
+
+                    <div class="col-md-3 col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="group-input">
+                                    <label for="layer_type">Layer Type
+                                               <select id = "myList">
+                                                 <!-- <option value = "pooling_layer">Pooling Layer</option> -->
+                                                 <option value = "dense_layer">Dense Layer</option>
+                                                 <option value = "output_layer">Output Layer</option>
+                                               </select>
+                                            
+                                    </label>
+                                </div>
+                                
+                                <div class="group-input">
+                                    <label for="no_units">No of Units
+                                        <input type="text" id="no_units">
+                                    </label>
+                                </div>	
+                                <div class="group-input">	
+                                    <label for="activation">Activation Layer
+                                        <select id = "myList">
+                                            <option value = "relu">ReLu Layer</option>
+                                            <option value = "leaky_relu">Leaky ReLu Layer</option>
+                                            <option value = "tanh">tanh</option>
+                                            <option value = "sigmoid">Sigmoid</option>
+                                        
+                                          </select>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    
+    
+                </div>
+            </section>
+
+            <section>
+                <div class='container'>
+        
+
+                    <div class="col-md-3 col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="group-input">
+                                    <label for="layer_type">Layer Type
+                                               <select id = "myList">
+                                                 <option value = "pooling_layer">Pooling Layer</option>
+                                                 <option value = "dense_layer">Dense Layer</option>
+                                                 <option value = "output_layer">Output Layer</option>
+                                               </select>
+                                            
+                                    </label>
+                                </div>
+                                
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="radio" class="form-check-input" name="max_radio">Max
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="radio" class="form-check-input" name="avg_radio">Average
+                                    </label>
+                                  </div>
+                                
+                                <div class="group-input">
+                                    <label for="filter_size_pool">Filter Size
+                                        <input type="text" id="filter_size">
+                                    </label>
+                                </div>	
+                                <div>
+                                    <label for="stride_pool">
+                                        stride
+                                        <input type="text" id="stride_pool">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    
+                </div>
+            </section>
+
+            <section>
+                <div class='container'>
+        
+                    <div class="col-md-3 col-sm-4">
+                            <div class="card">
+                                
+                        <div class="group-input">
+                            <label for="layer_type">Layer Type
+                                <select id = "myList">
+                                    <!-- <option value = "pooling_layer">Pooling Layer</option>
+                                    <option value = "dense_layer">Dense Layer</option> -->
+                                    <option value = "output_layer">Output Layer</option>
+                                </select>
+                            </label>
+                        </div>
+                        
+                    <div class="form-check">
+                        <label class="form-check-label" for="soft_max">
+                          <input type="radio" class="form-check-input" name="soft_max">Softmax
+                        </label>
+                    </div>
+                        </div>
+                    </div>
+
+                      
+                    
+                   
+                </div>
+                     
+                    <a class="retrain btn btn-warning" href="">Submit Model</a>
+                    <a class="repredict btn btn-success" href="">Add Layer</a> 
+    
+                </div>
+            </section>
+        </div>     
+            
+
+
+
+
+
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        </body>
+        </html>
