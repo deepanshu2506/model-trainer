@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 // const game = require('./model');
 var bodyParser = require('body-parser');
 const shortid = require('shortid');
-var Trainer = require('./model/trainer');
+var Trainer = require('./model/trainers');
 
 app.use(bodyParser())
 
@@ -34,6 +34,7 @@ app.post('/save',function(req,res){
       console.log(err);
     }else{
       console.log(newlyCreated);
+      res.send({code:1});
     }
   });
 });
@@ -68,17 +69,20 @@ app.post('/update',function(req,res){
 
 app.get('/alltrained',async function(req,res){
   try{
-    const res = await Trainer.aggregate([
+    const result = await Trainer.aggregate([
       {
         $project: {
+          _id:true,
           name: true,
           isTrained: true, 
-          isTraining: true
+          isTraining: true,
+          createdAt:true
         }
       }
     ]);
-    res.send({code: 1,data: found});
+    res.send({code: 1,data: result});
   }catch(err){
+    console.log(err)
     res.send({code: 0,message: "error"});
   }
   
