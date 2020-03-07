@@ -40,7 +40,6 @@ app.post('/save',function(req,res){
 
 app.get('/find', function(req,res){
   var modelId = req.body.id;
-
   Trainer.findById(modelId, function(err,foundModel){
     if(err){
       console.log(err);
@@ -67,6 +66,32 @@ app.post('/update',function(req,res){
   });
 });
 
+app.get('/alltrained',async function(req,res){
+  try{
+    const res = await Trainer.aggregate([
+      {
+        $project: {
+          name: true,
+          isTrained: true, 
+          isTraining: true
+        }
+      }
+    ]);
+    res.send({code: 1,data: found});
+  }catch(err){
+    res.send({code: 0,message: "error"});
+  }
+  
+
+
+  /*Trainer.find({},function(err,found){
+    if(err){
+      res.send({code: 0,message: "error"});
+    } else{
+      
+    }
+  })*/
+});
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(){
   console.log("model-trainer server Started");
