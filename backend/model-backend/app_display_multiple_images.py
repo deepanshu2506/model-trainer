@@ -127,5 +127,5 @@ def get_gallery():
     return render_template("gallery.html", image_names=image_names)
 
 if __name__ == "__main__":
-    app.run('0.0.0.0',port=4555, debug=True)
+    app.run('0.0.0.0',port=80, debug=True)
     
