@@ -7,5 +7,9 @@ var trainerSchema = new Schema({
     name: {type: String, required: true},
     config: {type: Object, required: true},
     modelstructure_url: {type: String, required: true},
-    modelweights_url: {type: String, required: true}
-});
+    modelweights_url: {type: String, required: true},
+    isTrained: {type: Boolean, default: false},
+    isTraining: {type: Boolean, default: true},
+    createdAt: {type: Number}
+},{timestamps: {currenttime: (()=>Math.floor(Date.now()/1000))}}
+);
