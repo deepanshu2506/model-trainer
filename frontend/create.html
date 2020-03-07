@@ -38,6 +38,8 @@
         <section>
             <div class='container'>
                 <!-- <form action="" name=""> -->
+                    <label for="name"></label>
+                    <input type="text" id="name" value="name">
                     <div class="card repeat-div">
                         <div class="card-body">
                                 <div class="group-input">
@@ -53,11 +55,11 @@
                                     <div class="box convolution_layer">
                                         <div class="group-input">
                                             <label for="stride">Stride</label>
-                                                <input type="text" id="stride">
+                                                <input type="number" id="stride" min=0 max = 20>
                                         </div>	
                                         <div class="group-input">	
                                             <label for="filter_size">Filter Size</label>
-                                                <input type="text" id="filter_size">
+                                                <input type="number" id="filter_size" min=0 max = 20>
                                         </div>
                                         <div class="group-input gi-check">	
                                             <input type="checkbox" id="same_conv">
@@ -69,8 +71,7 @@
                                     <div class="box dense_layer">
                                         <div class="group-input">
                                             <label for="no_units">No of Units</label>
-                                                <input type="text" id="no_units">
-                                            
+                                                <input type="number" id="no_units">
                                         </div>	
                                         <div class="group-input">	
                                             <label for="activation">Activation Layer</label>
@@ -96,21 +97,21 @@
                                         </div>
                                         <div class="group-input">
                                             <label for="filter_size_pool">Filter Size
-                                                <input type="text" id="filter_size">
                                             </label>
+                                            <input type="text" id="filter_size">
                                         </div>	
-                                        <div>
+                                        <div class="group-input">
                                             <label for="stride_pool">
                                                 stride
-                                                <input type="text" id="stride_pool">
                                             </label>
+                                            <input type="text" id="stride_pool">
                                         </div>
                                     </div>
 
                                     <div class="box output_layer">
                                         <div class="form-check">
                                             <label class="form-check-label" for="soft_max">
-                                            <input type="radio" class="form-check-input" name="soft_max">Softmax
+                                            <input type="radio" class="form-check-input" checked name="soft_max">Softmax
                                             </label>
                                         </div>
                                     </div>

@@ -154,3 +154,7 @@ body{
     margin-top: 10px;
     float: left;
   }
+
+  input[type='number']{
+    width: 50px;
+  }
