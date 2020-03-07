@@ -60,6 +60,12 @@ body{
     
   }
   
+  .main-menu li a{
+    height: 60px;
+  }
+  .main-menu li a i{
+    padding-top: 15px;
+  }
   .main-menu .nav-icon {
   position:relative;
   display:table-cell;
@@ -143,7 +149,6 @@ body{
 
   .repeat-div{
     margin-top: 10px;
-    border-radius: 30px !important;
   }
   .submit-button{
     margin-top: 10px;
@@ -158,3 +163,7 @@ body{
   input[type='number']{
     width: 50px;
   }
+
+#learning-label{
+  margin-left: 50px;
+}

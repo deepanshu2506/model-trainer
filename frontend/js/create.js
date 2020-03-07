@@ -45,6 +45,8 @@ $('.submit-button').on('click',function(){
     layers = []
     for(card of cards){
         layerconfig = {}
+        var name = $('#name').val();
+        var learningrate = $('#learning-rate').val();
         let layerType = $(card).children('.card-body').children('.group-input').children('select').val();
         if(layerType == 'convolution_layer'){
 
@@ -78,6 +80,6 @@ $('.submit-button').on('click',function(){
 
         layers.push(layerconfig);
     }
-    config={layers}
+    config={name,learningrate,layers}
     console.log(config)
 });
