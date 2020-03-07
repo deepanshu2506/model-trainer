@@ -136,10 +136,21 @@ body{
   }
 
   /*-------------------------------------------------*/
-  .box{
-    /* display: none; */
-  }
 
   /* .dense_layer, .pooling_layer,.output_layer{
     display: none;
   } */
+
+  .repeat-div{
+    margin-top: 10px;
+    border-radius: 30px !important;
+  }
+  .submit-button{
+    margin-top: 10px;
+    float: right;
+
+  }
+  .repeat-button{
+    margin-top: 10px;
+    float: left;
+  }

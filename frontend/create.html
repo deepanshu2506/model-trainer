@@ -37,50 +37,43 @@
             <div class="area2">
         <section>
             <div class='container'>
-                <div class="col-md-3 col-sm-4">
-                    <div class="card">
+                <form action="" name="">
+                    <div class="card repeat-div">
                         <div class="card-body">
-                        <form action="" name="">
-                            <div class="repeat-div">
                                 <div class="group-input">
-                                    <label for="layer_type">Layer Type
+                                    <label for="layer_type">Layer Type</label>
                                     <select class = "myList">
                                         <option value = "convolution_layer">Convolution Layer</option>
                                         <option value = "dense_layer">Dense Layer</option>
                                         <option value = "pooling_layer">Pooling Layer</option>
                                         <option value = "output_layer">Output Layer</option>
                                     </select>
-                                    </label>
                                 </div>
                                 
                                     <div class="box convolution_layer">
                                         <div class="group-input">
-                                            <label for="stride">Stride
+                                            <label for="stride">Stride</label>
                                                 <input type="text" id="stride">
-                                            </label>
                                         </div>	
                                         <div class="group-input">	
-                                            <label for="filter_size">Filter Size
+                                            <label for="filter_size">Filter Size</label>
                                                 <input type="text" id="filter_size">
-                                            </label>
                                         </div>
                                         <div class="group-input gi-check">	
-                                            <label for="same_conv">
-                                                Same Convolution Layer
-                                                <input type="checkbox" id="same_conv">
-                                                <span class="checkmark"></span>
-                                            </label>
+                                            <input type="checkbox" id="same_conv">
+                                            <label for="same_conv">Same Convolution Layer</label>
+                                            <span class="checkmark"></span>
                                         </div>
                                     </div>
 
                                     <div class="box dense_layer">
                                         <div class="group-input">
-                                            <label for="no_units">No of Units
+                                            <label for="no_units">No of Units</label>
                                                 <input type="text" id="no_units">
-                                            </label>
+                                            
                                         </div>	
                                         <div class="group-input">	
-                                            <label for="activation">Activation Layer
+                                            <label for="activation">Activation Layer</label>
                                                 <select id = "myList">
                                                     <option value = "relu">ReLu Layer</option>
                                                     <option value = "leaky_relu">Leaky ReLu Layer</option>
@@ -88,20 +81,18 @@
                                                     <option value = "sigmoid">Sigmoid</option>
                                                 
                                                 </select>
-                                            </label>
+                                            
                                         </div>
                                     </div>
 
                                     <div class="box pooling_layer">
                                         <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="max_radio">Max
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="avg_radio">Average
-                                            </label>
+                                            <input type="radio" class="form-check-input" value="max" name="radio1">
+                                            <label for="radio1" style="margin-right: 25px;">Max</label>
+
+                                            <input type="radio" class="form-check-input" value="avg" name="radio1">
+                                            <label for="radio1">Average</label>
+                                            
                                         </div>
                                         <div class="group-input">
                                             <label for="filter_size_pool">Filter Size
@@ -123,15 +114,13 @@
                                             </label>
                                         </div>
                                     </div>
-                                
-                            </div>  
-                            <button class="btn btn-secondary repeat-button">Add Model</button>
-                            <input class="btn btn-primary" type="submit" value="Submit Model">
-                        </form>
-
                         </div>
                     </div>
-                </div>
+                    <button class="btn btn-secondary repeat-button">Add Layer</button>
+                    <input class="btn btn-primary submit-button" type="submit" value="Submit Model">
+
+                </form>
+                
             </div>
         </section>
 
