@@ -135,19 +135,29 @@ height: 100%;
     padding-bottom: 100px;
 }
 
-#upload-button{
+#predict-button{
   margin-top: 20px;
 }
 
-.col-md-3{
+#upload-button{
+  float: right;
+}
+
+.row{
+  margin-top: 50px;
+}
+.col-md-4{
   padding-top: 10px;
   padding-bottom: 10px;
 }
 .repredict{
-  float: right;
+  margin-left: 20px;
+  margin-top: 20px;
   margin-right: 20px;
 }
 .retrain{
-  float: right;
+  margin-top: 20px;
 }
+
+
 
