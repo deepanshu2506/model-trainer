@@ -118,7 +118,6 @@ $("#file-picker").change(function () {
                                 <p class="card-text">Confidence Score</p>
                                 <div class='graphContent' id="chartContainer${index}" style="height: 370px; width: 100%;"></div>
                             </div>
-                            
                             <div class="card-body">
                                 <button class="incorrect btn btn-warning">Incorrect ?</a>
                             </div>
