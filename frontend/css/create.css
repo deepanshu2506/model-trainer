@@ -148,15 +148,17 @@ body{
   } */
 
   .repeat-div{
-    margin-top: 10px;
+    margin-top: 20px;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
   }
   .submit-button{
-    margin-top: 10px;
+    margin-top: 20px;
     float: right;
 
   }
   .repeat-button{
-    margin-top: 10px;
+    margin-top: 20px;
     float: left;
   }
 
@@ -166,4 +168,9 @@ body{
 
 #learning-label{
   margin-left: 50px;
+}
+
+.group-input{
+  margin-right: 15px;
+  float: left;
 }
