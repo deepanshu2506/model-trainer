@@ -1,5 +1,5 @@
 # model-trainer
-!(./screenshots/Capture.png)
-!(./screenshots/screen1.png)
-!(./screenshots/screen2.png)
-!(./screenshots/screen4.png)
+![image1](./screenshots/Capture.png)
+![image2](./screenshots/screen1.png)
+![image3](./screenshots/screen2.png)
+![image4](./screenshots/screen4.png)
