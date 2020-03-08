@@ -86,7 +86,7 @@ $('body').on('click' ,'.incorrect',function(){
     $(this).attr('disabled',true)
     const predictedClass = $(this).parent().siblings('.card-body').children('.class').text();
     $(this).parent().siblings('.card-body').children('.class').remove();
-    $(`<input type='text' value='${predictedClass}' /><button class = ' btn btn-success'id = 'correct'>correct</button>`).insertAfter($(this).parent().siblings('.card-body').children('h5'))
+    $(`<input type='text' value='${predictedClass}' /><button style="margin-left: 10px" class = ' btn btn-success'id = 'correct'>correct</button>`).insertAfter($(this).parent().siblings('.card-body').children('h5'))
 });
 
 

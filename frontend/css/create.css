@@ -174,3 +174,28 @@ body{
   margin-right: 15px;
   float: left;
 }
+
+input[type=text],input[type=number]{
+  outline: none;
+  border-style: none;
+  border-radius: 15px;
+  border:1px solid #bbb;
+}
+
+input[type=text]{
+  width: 150px;
+  transition: ease-in-out, width .35s ease-in-out;
+}
+input[type=number]{
+  width: 50px;
+  transition: ease-in-out, width .35s ease-in-out;
+}
+input[type=text]:focus {
+  width: 250px;
+  border-color:cornflowerblue;
+}
+input[type=number]:focus{
+  width: 100px;
+  border-color:cornflowerblue;
+}
+
