@@ -11,6 +11,7 @@ $('#predict-button').click(function(e){
     
     $.ajax({
         url: 'http://127.0.0.1:8080/upload',
+        // url:'http://13.232.28.208:8080/upload',
         type: 'post',
         data: fd,
         contentType: false,
