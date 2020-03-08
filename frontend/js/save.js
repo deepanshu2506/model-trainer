@@ -17,7 +17,7 @@ $(document).ready(
                     console.log(resp)
                     name = resp.name;
                     temp = new Date(resp.createdAt)
-                    date = temp.getDate()+'/'+temp.getMonth() + "/" + temp.getFullYear();
+                    date = temp.getDate()+'/'+parseInt(temp.getMonth()+1) + "/" + temp.getFullYear();
                     status = "a"
                     statusDesc = ''
                     if(!resp.istrained && resp.isTraining){
