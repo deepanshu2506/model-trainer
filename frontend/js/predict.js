@@ -104,6 +104,7 @@ $("#file-picker").change(function () {
         var dvPreview = $(".row");
         var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
         index = 0;
+        $('.area2 strong span').text(`${$(this)[0].files.length} files selected`)
         $($(this)[0].files).each(function () {
             var file = $(this);
             if (regex.test(file[0].name.toLowerCase())) {
@@ -124,10 +125,10 @@ $("#file-picker").change(function () {
                             
                         </div>
                         
-                    </div>
-                    
-                    `
+                    </div>`
                     );
+
+                    
                     var img = card.children().children('img');
                     img.attr("style", "height:100px;width: 100px");
                     img.attr("src", e.target.result);
