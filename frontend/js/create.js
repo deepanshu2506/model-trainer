@@ -47,6 +47,10 @@ $('.submit-button').on('click',function(){
         layerconfig = {}
         var name = $('#name').val();
         var learningrate = $('#learning-rate').val();
+        var epochs = $('#epochs').val();
+        var optimizer = $('#optimizer').val();
+        var lossFunction = $('#loss').val();
+        // console.log($(card).children('.card-body').children('.group-input'))
         let layerType = $(card).children('.card-body').children('.group-input').children('select').val();
         if(layerType == 'convolution_layer'){
 
@@ -76,23 +80,30 @@ $('.submit-button').on('click',function(){
         }
 
         else if(layerType == 'output_layer'){
-            layerconfig = {layerType,softmax:true}
+            
+            const data =  $(card).children('.card-body').children('.pooling_layer').children('.group-input');
+            const outputs = $(data[0]).children('input').val();
+            layerconfig = {layerType:layerType,softmax:true,outputs:outputs}
+            
         }
-
+        console.log(layerType)
+        console.log(layerconfig)
         layers.push(layerconfig);
+        console.log(layers)
     }
-    config={learningrate,layers}
-    $.ajax({
-        url: 'http://127.0.0.1:3000/save',
-        type: 'post',
-        data: {
+    config={learningrate,optimizer,lossFunction,layers:layers}
+    $.post(
+        'http://127.0.0.1:3000/save',
+        {
             name: name,
-            config:config
+            config:config,
+            abcd:'dssd',
+            layers: layers
         },
-        success: function(response){
-            if(response.code == 1)
-                window.location.href  = "save.html"
+        function(response){
+        //     if(response.code == 1)
+        //         // window.location.href  = "save.html"
         }
-    });
+    );
             console.log(config)
 });

@@ -54,10 +54,36 @@
                         <i></i>
                     </span>
                     <label id="epoch-label" for="epoch-rate">Epoch</label>
-                    <input type="text" class="effect-9" id="learning-rate" name="learning-rate">
+                    <input type="text" class="effect-9" id="epochs" name="epoch-rate">
+
+                    
+
+                    <label id="optimizer-label" for="optimizer">Optimizer</label>
+                    <select id="optimizer" name="optimizer">
+                        <option>SGD</option>
+                        <option>adam</option>
+                        <option>RMSprop</option>
+                        <option>Adagrad</option>
+                        <option>Adadelta</option>
+                        <option>Nadam</option>
+                        
+                    </select>
+
+                    <label id="loss-label" for="loss">Loss Function</label>
+                    <select id="loss" name="losss">
+                        <option>mean_squared_error</option>
+                        <option>mean_squared_error</option>
+                        <option>mean_absolute_percentage_error</option>
+                        <option>categorical_hinge</option>
+                        <option>categorical_crossentropy</option>
+                        <option>sparse_categorical_crossentropy</option>
+                        <option>binary_crossentropy</option>
+                        
+                    </select>
+
                     <div class="card repeat-div">
                         <div class="card-body">
-                                <div class="group-input1">
+                                <div class="group-input">
                                     <label for="layer_type">Layer Type</label>
                                     <select class = "myList">
                                         <option value = "convolution_layer">Convolution Layer</option>
@@ -131,6 +157,12 @@
                                         <div class="form-check">
                                             <label class="form-check-label" for="soft_max">
                                             <input type="radio" class="form-check-input" checked name="soft_max">Softmax
+                                            <div class="group-input">
+                                                <label for="outputs_opt">
+                                                    Number of outputs
+                                                </label>
+                                                <input type="number" id="outputs_opt">
+                                            </div>
                                             </label>
                                         </div>
                                     </div>
