@@ -1,32 +1,39 @@
-from keras.models import model_from_json
-import cv2
-import numpy as np
+from __future__ import with_statement
 
-json_file = open('./model/model.json', 'r')
-loaded_model_json = json_file.read()
-json_file.close()
-model = model_from_json(loaded_model_json)
-# load weights into new model
-model.load_weights("./model/model.h5")
-print("Loaded model from disk")
+import os, pickle
+def run_in_separate_process(func, *args, **kwds):
+    pread, pwrite = os.pipe()
+    pid = os.fork()
+    if pid > 0:
+        os.close(pwrite)
+        with os.fdopen(pread, 'rb') as f:
+            status, result = cPickle.load(f)
+        os.waitpid(pid, 0)
+        if status == 0:
+            return result
+        else:
+            raise result
+    else: 
+        os.close(pread)
+        try:
+            result = func(*args, **kwds)
+            status = 0
+        except (Exception, exc):
+            result = exc
+            status = 1
+        with os.fdopen(pwrite, 'wb') as f:
+            try:
+                pickle.dump((status,result), f, cPickle.HIGHEST_PROTOCOL)
+            except (pickle.PicklingError, exc):
+                pickle.dump((2,exc), f, cPickle.HIGHEST_PROTOCOL)
+        os._exit(0)
 
-def predict(imgs):
-  pred_data = []
-  for img in imgs:
-    print(img)
-    pred_data.append(cv2.resize(img,dsize = (150,150)))
+#an example of use
+def treble(x):
+    return 3 * x
 
-  pred = model.predict(np.array(pred_data))
-  
-  confidence = []
-  for prediction in pred:
-    confidence.append({'buildings':prediction[0],'forest': prediction[1],'glacier': prediction[2],'mountain': prediction[3],'sea': prediction[4],'street': prediction[5]})
-  return confidence
-
-
-# img = cv2.imread('D:\projects\image-classifier\data\seg_pred\seg_pred\973.jpg')
-# img2 = cv2.imread('D:\projects\image-classifier\data\seg_pred\seg_pred\888.jpg')
-# # print([img])
-# print(predict([img,img2]))
-
-  
+def main():
+    #calling directly
+    print( treble(4))
+    #calling in separate process
+    print( run_in_separate_process(treble, 4))
