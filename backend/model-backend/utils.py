@@ -4,21 +4,21 @@ from sklearn.utils import shuffle
 def get_images(directory):
     Images = []
     Labels = []  # 0 for Building , 1 for forest, 2 for glacier, 3 for mountain, 4 for Sea , 5 for Street
-    label = 0
+    label = [0]*6
     
     for labels in os.listdir(directory): #Main Directory where each class label is present as folder name.
         if labels == 'glacier': #Folder contain Glacier Images get the '2' class label.
-            label = 2
+            label[2] = 1
         elif labels == 'sea':
-            label = 4
+            label[4] = 1
         elif labels == 'buildings':
-            label = 0
+            label[0] = 1
         elif labels == 'forest':
-            label = 1
+            label[1] = 1
         elif labels == 'street':
-            label = 5
+            label[5] = 1
         elif labels == 'mountain':
-            label = 3
+            label[3] = 1
         
         for image_file in os.listdir(directory+labels): #Extracting the file name of the image from Class Label folder
             image = cv2.imread(directory+labels+r'/'+image_file) #Reading the image (OpenCV)

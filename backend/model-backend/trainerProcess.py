@@ -80,8 +80,8 @@ print(model.summary())
 images,labels = get_images('./data/seg_train/seg_train/')
 images = np.array(images)
 labels = np.array(labels)
-print(images.shape)
-labels = labels.reshape(1, -1)
+print(labels.shape)
+# labels = labels.reshape(1, -1)
 # images = labels.reshape(1,-1)
 
 # print(images.shape)
@@ -90,4 +90,5 @@ model.fit(
             images,labels,
             batch_size=32,
             epochs=70,
-            verbose=1)
+            verbose=1
+        )
